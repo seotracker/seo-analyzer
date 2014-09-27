@@ -18,21 +18,9 @@ use SeoTracker\SeoCore\Interfaces\WebsiteInterface;
  *
  * @author Mickaël Andrieu <mickael.andrieu@hotmail.fr>
  */
-interface ExporterInterface
+interface ResultInterface
 {
-    /**
-     * set Website to be analyzed
-     *
-     * @param WebsiteInterface $website Website object
-     *
-     * @return $this self Object
-     */
-    public function exports(ResultInterface $result);
-
-    /**
-     * Adapter can be used
-     *
-     * @return boolean
-     */
-    public function isOk();
+    public function getWebsite();
+    public function getComparedWebsite();
+    public function getResults();
 }

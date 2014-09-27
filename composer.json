@@ -12,13 +12,11 @@
     ],
     "require": {
         "php": ">=5.4.4",
-        "seotracker/seocore": "1.0.*"
-    },
-    "suggest": {
-        "ext-curl": "For usage of Curl adapter"
+        "seotracker/seocore": "1.0.1",
+        "symfony/expression-language": "2.4.*"
     },
     "autoload": {
-        "psr-4": {"SeoTracker\\SeoCore\\": ""}
+        "psr-4": {"SeoTracker\\SeoAnalyzer\\": ""}
     },
     "minimum-stability": "stable",
     "extra": {

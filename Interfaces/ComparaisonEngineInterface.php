@@ -18,17 +18,8 @@ use SeoTracker\SeoCore\Interfaces\WebsiteInterface;
  *
  * @author Mickaël Andrieu <mickael.andrieu@hotmail.fr>
  */
-interface AnalyzerInterface
+interface ComparaisonEngineInterface
 {
-    /**
-     * set Website to be analyzed
-     *
-     * @param WebsiteInterface $website Website object
-     *
-     * @return $this self Object
-     */
-    public function setWebsite(WebsiteInterface $website);
-
     /**
      * Adapter can be used
      *
@@ -37,12 +28,16 @@ interface AnalyzerInterface
     public function isOk();
 
     /**
-     * Apply a comparaison engine and return an array
+     * Rules to be applied on the camparaison
      *
-     * @param ComparaisonEngineInterface $engine Comparaison object
-     * @param array $filters field on which not execute the comparaison
-     *
-     * @return ResultInterface
+     * @return $this self Object
      */
-    public function compareTo(ComparaisonEngineInterface $comparaison, $filters);
+    public function getRules();
+
+    /**
+     * Apply rules on websites and return an evaluation of comparaison
+     *
+     * @return array
+     */
+    public function applyRules(WebsiteInterface $website1, WebsiteInterface $website2);
 }
